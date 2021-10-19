@@ -1,8 +1,8 @@
 # NumberGuessingGame
 The program:
-    ------------------------------------
+
     1. Display an intro/welcome message to the player. yes 
-    2. Store a random number as the answer/solution. yes
+    2. Store a random number as the answer/solution. yes (1-45)
     3. Continuously prompt the player for a guess. yes
       a. If the guess greater than the solution, display to the player "It's lower".
       b. If the guess is less than the solution, display to the player "It's higher".
