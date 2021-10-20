@@ -34,22 +34,28 @@ def start_game():
     print("Welcome to the number guessing game!  ")
     num = random.randint(1, 46) 
     attempt_count = 1
-    number = int(input("Guess a number between 1 and 45?  "))
-    while number != num:
-        attempt_count = attempt_count + 1
-        if number > 45 or number < 1:
-            print("It's outside the range of numbers.  ")
-        elif number > num:
-            print("The number is lower!  ")
-        else:
-            print("The number is higher!  ")
+    
+    try:
         number = int(input("Guess a number between 1 and 45?  "))
+        if number > 45 or number < 1:
+            number = int(input("That number is outside the range of numbers. Guess between 1 and 45 "))
+
+        while number != num:
+            attempt_count = attempt_count + 1
+            if number > num:
+                print("The number is lower!  ")
+            else:
+                print("The number is higher!  ")
+            number = int(input("Guess a number between 1 and 45?  "))
+    except ValueError as err:
+        print("Please enter a valid number  ")
         
 
     if num == number:
         print("Congratulations, u got it!!  ")
         print("It took you" , attempt_count, "tries")
         print("Game Over!  ")
+  
         
 
 # Kick off the program by calling the start_game function.
